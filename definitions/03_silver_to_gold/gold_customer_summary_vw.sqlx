@@ -1,0 +1,20 @@
+config {
+    type: "view",
+    schema: config.dataset_dest_name,
+    name: "gold_customer_summary_vw",
+    tags: ["silver_to_gold", "main_pipeline"]
+}
+
+SELECT
+  o.customer_id,
+  COUNT(DISTINCT o.order_id) AS total_orders,
+  SUM(p.payment_amount) AS total_paid,
+  COUNT(DISTINCT o.product_id) AS distinct_products,
+  STRING_AGG(DISTINCT pr.product_name, ", ") AS products_ordered
+FROM ${ref("silver_orders")} o
+LEFT JOIN ${ref("silver_payments")} p
+  ON o.order_id = p.order_id
+LEFT JOIN ${ref("silver_products")} pr
+  ON o.product_id = pr.product_id
+GROUP BY o.customer_id
+ORDER BY total_paid DESC

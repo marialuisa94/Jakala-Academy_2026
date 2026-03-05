@@ -1,0 +1,8 @@
+defaultProject: jit-training-dma
+defaultLocation: EU
+defaultDataset: dataform
+defaultAssertionDataset: dataform_assertions
+dataformCoreVersion: 3.0.42
+vars:
+    destination_dataset: Academy_2026_Demo_Marialuisa_Cara
+
