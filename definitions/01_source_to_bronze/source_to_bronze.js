@@ -16,6 +16,10 @@ tables.forEach(table => {
       SELECT 
         *,
         CURRENT_TIMESTAMP() AS load_timestamp
-      FROM ${dataset_dest_name + "." + "raw_" + table.name}
+      
+      FROM ${ctx.ref(`raw_${table.name}`)}
     `)
 });
+
+//FROM ${dataset_dest_name + "." + "raw_" + table.name} --> se noi sostituissimo questo, perderemmo la dipendenza da RAW
+// ctx è l’oggetto che rappresenta il contesto di compilazione della query
