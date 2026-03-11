@@ -1,19 +1,19 @@
 const dataset_dest_name = dataform.projectConfig.vars.destination_dataset
 
 const tables = [{
-        name: "orders",
+        name: "trains",
         update_mode: "incremental",
-        keys: ["order_id"]
+        keys: ["train_id"]
     },
     {
-        name: "products",
+        name: "stations",
         update_mode: "incremental",
-        keys: ["product_id"]
+        keys: ["station_id"]
     },
     {
-        name: "payments",
+        name: "departures",
         update_mode: "incremental",
-        keys: ["order_id"]
+        keys: ["departure_id"]
     }
 ]
 

@@ -1,0 +1,9 @@
+config {
+  type: "assertion",
+  tags: ["data_quality","main_pipeline"]
+}
+
+LECT station_id
+FROM ${ref("raw_stations")}
+GROUP BY station_id
+HAVING COUNT(station_id) > 1

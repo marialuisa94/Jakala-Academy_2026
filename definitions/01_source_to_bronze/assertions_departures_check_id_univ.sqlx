@@ -1,0 +1,9 @@
+config {
+  type: "assertion",
+  tags: ["data_quality","main_pipeline"]
+}
+
+SELECT train_id
+FROM ${ref("raw_trains")}
+GROUP BY train_id
+HAVING COUNT(train_id) > 1

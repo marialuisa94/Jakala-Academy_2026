@@ -1,0 +1,9 @@
+config {
+  type: "assertion",
+  tags: ["data_quality","main_pipeline"]
+}
+
+SELECT *
+FROM ${ref("raw_departures")}
+WHERE departure_station = arrival_station
+

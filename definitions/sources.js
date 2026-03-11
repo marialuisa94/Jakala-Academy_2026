@@ -1,14 +1,14 @@
 declare({
-  schema: "Academy_2026_Demo_Marialuisa_Cara",
-  name: "raw_orders"
+  schema: "dataset_academy_esercizio_AnnaOrlandi",
+  name: "raw_trains"
 })
 
 declare({
-  schema: "Academy_2026_Demo_Marialuisa_Cara",
-  name: "raw_products"
+  schema: "dataset_academy_esercizio_AnnaOrlandi",
+  name: "raw_stations"
 })
 
 declare({
-  schema: "Academy_2026_Demo_Marialuisa_Cara",
-  name: "raw_payments"
+  schema: "dataset_academy_esercizio_AnnaOrlandi",
+  name: "raw_departures"
 })

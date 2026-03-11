@@ -1,0 +1,8 @@
+config {
+  type: "assertion",
+  tags: ["data_quality","main_pipeline"]
+}
+
+SELECT *
+FROM ${ref("raw_stations")}
+WHERE station_id IS NULL

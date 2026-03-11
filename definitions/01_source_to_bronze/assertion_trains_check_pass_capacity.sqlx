@@ -1,0 +1,11 @@
+config {
+  type: "assertion",
+  tags: ["data_quality","main_pipeline"]
+}
+
+SELECT dep.train_id, dep.passengers
+FROM ${ref("raw_departures")} dep
+LEFT JOIN  ${ref("raw_trains")} trains
+ON dep.train_id = trains.train_id
+WHERE dep.passengers >= trains.capacity
+
