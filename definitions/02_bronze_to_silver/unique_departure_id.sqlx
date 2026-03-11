@@ -1,4 +1,7 @@
 --Controlla i duplicati relativi agli ID partenze
+config {
+  type: "assertion"
+}
 assertion("unique_departure_id")
 select departure_id
 from ${ref("bronze_departures")}

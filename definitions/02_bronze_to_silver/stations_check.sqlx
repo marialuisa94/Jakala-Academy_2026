@@ -1,5 +1,9 @@
+
 -- Check stazioni di arrivo diverse da quelle di partenza
-assertion("departure_not_equal_arrival")
+config {
+  type: "assertion"
+}
+assertion("stations_check")
 select *
 from ${ref("bronze_departures")}
 where departure_station = arrival_station

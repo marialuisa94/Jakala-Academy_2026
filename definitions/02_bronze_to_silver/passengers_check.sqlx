@@ -1,6 +1,12 @@
 
 -- Check se passeggeri maggiori della capacità nei treni
-assertion("passengers_within_capacity")
+config {
+  type: "assertion"
+}
+
 select *
 from ${ref("silver_departures")}
 where passengers > capacity
+
+
+
