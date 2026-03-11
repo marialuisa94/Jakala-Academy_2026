@@ -1,22 +1,12 @@
-const dataset_dest_name = dataform.projectConfig.vars.destination_dataset
+const dataset_dest_name = "Dataset_Academy2026_Molinaro" ;
 
-const tables = [{
-        name: "orders",
-        update_mode: "incremental",
-        keys: ["order_id"]
-    },
-    {
-        name: "products",
-        update_mode: "incremental",
-        keys: ["product_id"]
-    },
-    {
-        name: "payments",
-        update_mode: "incremental",
-        keys: ["order_id"]
-    }
-]
-
+const tables = [
+    { name: "bronze_trains", update_mode: "full_refresh", keys: ["train_id"] },
+    { name: "bronze_stations", update_mode: "full_refresh", keys: ["station_id"] },
+    { name: "bronze_departures", update_mode: "full_refresh", keys: ["departure_id"] },
+    { name: "silver_departures", update_mode: "full_refresh", keys: ["departure_id"] },
+    { name: "gold_top_routes", update_mode: "full_refresh", keys: [] }
+];
 
 module.exports = {
     dataset_dest_name,

@@ -1,0 +1,9 @@
+config {
+  type: "table",
+  schema: "Dataset_Academy2026_Molinaro"
+}
+
+select *
+from ${ref("raw_stations")}
+where station_id is not null
+  and city is not null

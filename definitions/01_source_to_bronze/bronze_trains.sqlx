@@ -1,0 +1,9 @@
+config {
+  type: "table",
+  schema: "Dataset_Academy2026_Molinaro"
+}
+
+select *
+from ${ref("raw_trains")}
+where train_id is not null
+  and capacity > 0

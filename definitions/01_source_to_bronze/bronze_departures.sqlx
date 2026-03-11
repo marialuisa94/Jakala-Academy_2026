@@ -1,0 +1,10 @@
+config {
+  type: "table",
+  schema: "Dataset_Academy2026_Molinaro"
+  }
+
+select *
+from ${ref("raw_departures")}
+where departure_id is not null
+  and passengers >= 0
+  and departure_station <> arrival_station
