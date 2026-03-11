@@ -1,0 +1,6 @@
+--Controlla i duplicati relativi agli ID partenze
+assertion("unique_departure_id")
+select departure_id
+from ${ref("bronze_departures")}
+group by departure_id
+having count(*) > 1
