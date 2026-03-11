@@ -3,7 +3,7 @@
 config {
   type: "assertion"
 }
-assertion("stations_check")
+
 select *
 from ${ref("bronze_departures")}
 where departure_station = arrival_station
