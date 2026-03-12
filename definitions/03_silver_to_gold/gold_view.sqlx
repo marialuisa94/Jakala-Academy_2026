@@ -1,0 +1,26 @@
+config {
+  type: "view",
+  schema: "Dataset_Academy2026_Molinaro"
+  tag: ["layer:gold"]
+}
+
+select
+  t.train_name,
+  s1.city as departure_city,
+  s2.city as arrival_city,
+  count(*) as num_departures,
+  sum(d.passengers) as total_passengers,
+  round(avg(fill_ratio)*100, 2) as avg_fill_percentage
+from ${ref("silver_departures")} d
+join ${ref("silver_trains")} t
+  on d.train_id = t.train_id
+join ${ref("silver_stations")} s1
+  on d.departure_station = s1.station_id
+join ${ref("silver_stations")} s2
+  on d.arrival_station = s2.station_id
+group by
+  t.train_name,
+  departure_city,
+  arrival_city
+order by total_passengers desc
+

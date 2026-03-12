@@ -1,6 +1,7 @@
 config {
   type: "table",
-  schema: "Dataset_Academy2026_Molinaro"
+  schema: "Dataset_Academy2026_Molinaro",
+  tags: ["layer:bronze"]
 }
 
 select *

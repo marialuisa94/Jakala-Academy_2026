@@ -5,5 +5,5 @@ config {
 }
 
 select *
-from ${ref("bronze_departures")}
+from ${ref("silver_departures")}
 where departure_station = arrival_station

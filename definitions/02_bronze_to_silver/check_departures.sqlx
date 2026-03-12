@@ -4,6 +4,6 @@ config {
 }
 
 select departure_id
-from ${ref("bronze_departures")}
+from ${ref("silver_departures")}
 group by departure_id
 having count(*) > 1

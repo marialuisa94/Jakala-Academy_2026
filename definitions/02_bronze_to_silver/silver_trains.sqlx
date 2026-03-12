@@ -1,8 +1,9 @@
 config {
   type: "table",
   schema: "Dataset_Academy2026_Molinaro",
-  tags: ["layer:bronze"]
+  tags: ["layer:silver"]
 }
 
 select *
-from ${ref("raw_stations")}
+from ${ref("bronze_trains")}
+where capacity > 0
