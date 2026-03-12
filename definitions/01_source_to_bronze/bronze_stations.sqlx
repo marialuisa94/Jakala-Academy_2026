@@ -5,5 +5,3 @@ config {
 
 select *
 from ${ref("raw_stations")}
-where station_id is not null
-  and city is not null
