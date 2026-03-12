@@ -1,0 +1,8 @@
+config {
+  type: "operations"
+}
+
+DELETE FROM `Dataset_Academy2026_Molinaro.raw_departures`
+WHERE departure_id IS NULL
+  AND train_id = 'TR001'
+  AND passengers = 150;

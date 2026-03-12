@@ -1,0 +1,9 @@
+
+config {
+  type: "operations"
+}
+
+INSERT INTO `Dataset_Academy2026_Molinaro.raw_departures`
+(departure_id, train_id, departure_station, arrival_station, departure_time, passengers, insert_timestamp)
+VALUES
+(NULL, 'TR001', 'ST01', 'ST02', CURRENT_TIMESTAMP(), 150, CURRENT_TIMESTAMP());
