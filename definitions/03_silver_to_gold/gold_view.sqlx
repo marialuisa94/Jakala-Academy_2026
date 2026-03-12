@@ -9,7 +9,12 @@ select
   s2.city as arrival_city,
   count(*) as num_departures,
   sum(d.passengers) as total_passengers,
-  round(avg(fill_ratio)*100, 2) as avg_fill_percentage
+round(
+  avg(
+    SAFE_DIVIDE(d.passengers, NULLIF(t.capacity, 0))
+  ) * 100
+, 2) as avg_fill_percentage
+
 from ${ref("silver_departures")} d
 join ${ref("silver_trains")} t
   on d.train_id = t.train_id
