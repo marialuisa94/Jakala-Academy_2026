@@ -1,7 +1,6 @@
 config {
   type: "view",
   schema: "Dataset_Academy2026_Molinaro"
-  tag: ["layer:gold"]
 }
 
 select
